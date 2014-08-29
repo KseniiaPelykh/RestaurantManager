@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">RestaurantManager</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
+	<string name="primi">Primi</string>
+	<string name="secondi">Secondi</string>
+	<string name="antipasti">Antipasti</string>
+	<string name="dolce">Dolce</string>
+	<string name="menu">MENU</string>
 </resources>
