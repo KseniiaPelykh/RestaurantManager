@@ -22,6 +22,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.restaurantmanager.Primi"
+            android:label="@string/title_activity_primi" >
+        </activity>
+        <activity
+            android:name="com.example.restaurantmanager.Secondi"
+            android:label="@string/title_activity_secondi" >
+        </activity>
+        <activity
+            android:name="com.example.restaurantmanager.Antipasti"
+            android:label="@string/title_activity_antipasti" >
+        </activity>
+        <activity
+            android:name="com.example.restaurantmanager.Dolce"
+            android:label="@string/title_activity_dolce" >
+        </activity>
     </application>
 
 </manifest>

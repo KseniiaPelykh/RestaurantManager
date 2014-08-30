@@ -22,26 +22,30 @@
         	android:layout_width="140dp"
         	android:layout_height="wrap_content"
         	android:text="@string/primi" 
-        	android:background="#AA66CC"/>        
+        	android:background="#AA66CC"
+        	android:onClick="openPrimi"/>        
     	<Button 
         	android:layout_width="140dp"
         	android:layout_height="wrap_content"
         	android:text="@string/secondi"
-			android:background="#33B5E5"/>        
+			android:background="#33B5E5"
+			android:onClick="openSecondi"/>        
  	</TableRow>
     <TableRow>    	
      	<Button
      	    android:layout_width="140dp"
      	    android:layout_height="wrap_content"
      	    android:text="@string/antipasti"
-     	    android:background="#99CC00">     	    
+     	    android:background="#99CC00"
+     	    android:onClick="openAntipasti">     	    
      	</Button>
      	
      	<Button
      	    android:layout_width="140dp"
      	    android:layout_height="wrap_content"
      	    android:text="@string/dolce"
-     	    android:background="#FF4444">
+     	    android:background="#FF4444"
+     	    android:onClick="openDolce">
      	</Button>
      </TableRow>
        
