@@ -80,8 +80,8 @@ public class MainActivity extends ActionBarActivity {
 	}
 	
 	// aprire la lista dei secondi
-	public void openDolce(View view) {
-	    Intent intent = new Intent(this, Dolce.class);
+	public void openDolci(View view) {
+	    Intent intent = new Intent(this, Dolci.class);
 	    startActivity(intent);
 	}
 

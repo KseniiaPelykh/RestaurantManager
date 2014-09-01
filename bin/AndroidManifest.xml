@@ -35,8 +35,8 @@
             android:label="@string/title_activity_antipasti" >
         </activity>
         <activity
-            android:name="com.example.restaurantmanager.Dolce"
-            android:label="@string/title_activity_dolce" >
+            android:name="com.example.restaurantmanager.Dolci"
+            android:label="@string/title_activity_dolci" >
         </activity>
     </application>
 

@@ -1077,7 +1077,11 @@ containing a value of this type.
         public static final int abc_textfield_searchview_holo_light=0x7f020054;
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
-        public static final int ic_launcher=0x7f020057;
+        public static final int antipastibutton=0x7f020057;
+        public static final int dolcibutton=0x7f020058;
+        public static final int ic_launcher=0x7f020059;
+        public static final int primibutton=0x7f02005a;
+        public static final int secondibutton=0x7f02005b;
     }
     public static final class id {
         public static final int action_bar=0x7f05001c;
@@ -1256,13 +1260,13 @@ containing a value of this type.
         public static final int action_settings=0x7f0a000e;
         public static final int antipasti=0x7f0a0011;
         public static final int app_name=0x7f0a000d;
-        public static final int dolce=0x7f0a0012;
+        public static final int dolci=0x7f0a0012;
         public static final int hello_world=0x7f0a0015;
         public static final int menu=0x7f0a0013;
         public static final int primi=0x7f0a000f;
         public static final int secondi=0x7f0a0010;
         public static final int title_activity_antipasti=0x7f0a0017;
-        public static final int title_activity_dolce=0x7f0a0018;
+        public static final int title_activity_dolci=0x7f0a0018;
         public static final int title_activity_primi=0x7f0a0014;
         public static final int title_activity_secondi=0x7f0a0016;
     }

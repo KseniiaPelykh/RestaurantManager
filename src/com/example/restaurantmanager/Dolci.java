@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 
-public class Dolce extends ActionBarActivity {
+public class Dolci extends ActionBarActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

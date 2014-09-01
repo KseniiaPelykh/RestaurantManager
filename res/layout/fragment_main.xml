@@ -4,12 +4,13 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:gravity="center_horizontal"
-	android:padding="35dip" >
+	android:padding="5dip" >
     <TextView 
     	android:text="@string/menu"
     	android:layout_height="wrap_content"
     	android:layout_width="wrap_content"
     	android:layout_gravity="center"
+    	android:layout_marginTop="20dip"
     	android:layout_marginBottom="20dip"
     	android:textSize="24.5sp">
     </TextView>
@@ -17,18 +18,20 @@
        	android:layout_height="wrap_content"
        	android:layout_width="wrap_content"
        	android:gravity="center">
-   <TableRow>
+   <TableRow
+       android:layout_marginBottom="10dp">
     	<Button
-        	android:layout_width="140dp"
+        	android:layout_width="150dp"
         	android:layout_height="wrap_content"
         	android:text="@string/primi" 
-        	android:background="#AA66CC"
-        	android:onClick="openPrimi"/>        
+        	android:background="@drawable/primibutton"
+        	android:onClick="openPrimi"
+        	android:layout_marginRight="10dp"/>        
     	<Button 
-        	android:layout_width="140dp"
+        	android:layout_width="150dp"
         	android:layout_height="wrap_content"
         	android:text="@string/secondi"
-			android:background="#33B5E5"
+			android:background="@drawable/secondibutton"
 			android:onClick="openSecondi"/>        
  	</TableRow>
     <TableRow>    	
@@ -36,16 +39,17 @@
      	    android:layout_width="140dp"
      	    android:layout_height="wrap_content"
      	    android:text="@string/antipasti"
-     	    android:background="#99CC00"
+     	    android:background="@drawable/antipastibutton"
+     	    android:layout_marginRight="10dp"
      	    android:onClick="openAntipasti">     	    
      	</Button>
      	
      	<Button
      	    android:layout_width="140dp"
      	    android:layout_height="wrap_content"
-     	    android:text="@string/dolce"
-     	    android:background="#FF4444"
-     	    android:onClick="openDolce">
+     	    android:text="@string/dolci"
+     	    android:background="@drawable/dolcibutton"
+     	    android:onClick="openDolci">
      	</Button>
      </TableRow>
        

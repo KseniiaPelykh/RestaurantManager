@@ -6,12 +6,12 @@
     <string name="primi">Primi</string>
     <string name="secondi">Secondi</string>
     <string name="antipasti">Antipasti</string>
-    <string name="dolce">Dolce</string>
+    <string name="dolci">Dolci</string>
     <string name="menu">MENU</string>
     <string name="title_activity_primi">Primi</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_secondi">Secondi</string>
     <string name="title_activity_antipasti">Antipasti</string>
-    <string name="title_activity_dolce">Dolce</string>
+    <string name="title_activity_dolci">Dolci</string>
 
 </resources>
