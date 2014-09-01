@@ -1,15 +1,16 @@
 package com.example.restaurantmanager;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Build;
+
+import com.parse.Parse;
+import com.parse.ParseObject;
 
 public class Primi extends ActionBarActivity {
 
@@ -17,7 +18,12 @@ public class Primi extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_primi);
-
+		Parse.initialize(this, "84bUuZyJqKG5TeNCTplkAKADPUxFRXuIwnjJq1g8", "0yfVE0QoAM7lV3xe2xOJiDG9ImP5eRBwZ6YSSC1t");
+		
+		ParseObject testObject = new ParseObject("TestObject");
+		testObject.put("foo", "bar");
+		testObject.saveInBackground();
+		
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
