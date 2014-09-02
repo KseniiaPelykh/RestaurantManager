@@ -1,70 +1,93 @@
 package com.example.restaurantmanager;
 
+import java.util.List;
+
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.ActionBarActivity;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
 
+import com.parse.FindCallback;
 import com.parse.Parse;
+import com.parse.ParseException;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
 
-public class Primi extends ActionBarActivity {
-
+public class Primi extends Activity {
+	
+	ListView listview;
+	List<ParseObject> ob;
+	ProgressDialog mProgressDialog;
+	ArrayAdapter<String> adapter;
+	SimpleCursorAdapter mAdapter;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_primi);
-		Parse.initialize(this, "84bUuZyJqKG5TeNCTplkAKADPUxFRXuIwnjJq1g8", "0yfVE0QoAM7lV3xe2xOJiDG9ImP5eRBwZ6YSSC1t");
-		
-		ParseObject testObject = new ParseObject("TestObject");
-		testObject.put("foo", "bar");
-		testObject.saveInBackground();
-		
-		if (savedInstanceState == null) {
-			getSupportFragmentManager().beginTransaction()
-					.add(R.id.container, new PlaceholderFragment()).commit();
-		}
+	 	
+		setContentView(R.layout.listview_primi);
+		new RemoteDataTask().execute();		
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.primi, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
-
-	/**
-	 * A placeholder fragment containing a simple view.
-	 */
-	public static class PlaceholderFragment extends Fragment {
-
-		public PlaceholderFragment() {
-		}
-
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fragment_primi,
-					container, false);
-			return rootView;
-		}
-	}
-
+	
+    // RemoteDataTask AsyncTask
+    private class RemoteDataTask extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            // Create a progressdialog
+            mProgressDialog = new ProgressDialog(Primi.this);
+            // Set progressdialog title
+            mProgressDialog.setTitle("I primi");
+            // Set progressdialog message
+            mProgressDialog.setMessage("Caricamento...");
+            mProgressDialog.setIndeterminate(false);
+            // Show progressdialog
+            mProgressDialog.show();
+        }
+ 
+        @Override
+        protected Void doInBackground(Void... params) {		
+        	ParseQuery<ParseObject> query = new ParseQuery<ParseObject>(
+                    "Piatto");
+        	try {
+                ob = query.find();
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+                
+        @Override
+        protected void onPostExecute(Void result) {
+            // Locate the listview in listview_main.xml
+            listview = (ListView) findViewById(R.id.listview);
+            // Pass the results into an ArrayAdapter
+            adapter = new ArrayAdapter<String>(Primi.this,
+                    R.layout.listview_item);
+            // Retrieve object "name" from Parse.com database
+            for (ParseObject Piatto : ob) {
+                adapter.add((String) Piatto.get("Nome"));
+            }
+            // Binds the Adapter to the ListView
+            listview.setAdapter(adapter);
+            // Close the progressdialog
+            mProgressDialog.dismiss();
+            // Capture button clicks on ListView items
+            
+            listview.setOnItemClickListener(new OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view,
+                        int position, long id) {
+                    // Send single item click data to SingleItemView Class
+                }
+            });
+        }
+    }
 }
